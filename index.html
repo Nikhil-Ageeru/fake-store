@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fake store</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <style>
+        .card {
+            box-shadow: 2px 2px 5px lightgray;
+            background-color: blanchedalmond;
+        }
+
+
+        select {
+            margin: 17px;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+            margin-top: 3px;
+        }
+        #cartBtn{
+            width: 100px;
+            background: gold;
+        }
+        body{
+            background: beige;
+        }
+    </style>
+    <script src="script.js">
+    </script>
+</head>
+<!-- body -->
+
+<body  onload="bodyLoad()">
+    <header class="d-flex justify-content-around bg-dark text-light pt-3">
+        <div class="brand-title h2">Fake Store</div>
+        <nav class="nav">
+            <span class="nav-item mt-2 mx-3"><a href="javascript:loadProducts('https://fakestoreapi.com/products');">Home</a></span>
+            <span class="nav-item mt-2 mx-3"><a href="javascript:loadProducts('https://fakestoreapi.com/products/category/electronics');">Electronics</a></span>
+            <span class="nav-item mt-2 mx-3"><a href="javascript:loadProducts('https://fakestoreapi.com/products/category/jewelery');">Jewellery</a></span>
+            <span class="nav-item mt-2 mx-3"><a href="javascript:loadProducts('https://fakestoreapi.com/products/category/men);">Men's Clothing</a></span>
+            <span class="nav-item mt-2 mx-3"><a href="javascript:loadProducts('https://fakestoreapi.com/products/category/women');">women's Clothing</a></span>
+        </nav>
+        <button id="cartBtn" class="bi-cart rounded"> Cart</button>
+    </header>
+
+    <article class="bg-dark text-light h5 text-center p-2"> <span class="bi-lightning-fill text-warning"></span> HOLIDAY
+        DEALS 60% OFF - LIMITED OFFER <span class="bi-lightning-fill text-warning"></span></article>
+    <section class="row p-2">
+        
+    <nav id="leftNav" class="col-12 col-md-2">
+            <div>
+                <select onchange="productChange()" class="border  rounded col-12 col-md-10 w-100" id="dropdown">
+                </select>
+            </div>
+    </nav>
+    <main class="d-flex flex-wrap  col-10 px-2 mt-0">
+
+    </main>
+    
+    </section>
+
+
+
+</body>
+
+</html>
