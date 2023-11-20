@@ -1,3 +1,4 @@
+var cartItems = [];
 function bodyLoad() {
     categoryLoad();
     loadProducts("https://fakestoreapi.com/products");
@@ -31,7 +32,7 @@ function productChange() {
 }
 
 function loadProducts(url) {
-    document.querySelector("main").innerHTML="";
+    document.querySelector("main").innerHTML = "";
     fetch(url)
         .then(function (res) {
             return res.json();
@@ -56,9 +57,45 @@ function loadProducts(url) {
          <span class="bi-star-fill badge bg-success"> ${product.rating.rate} </span> [${product.rating.count}]
     </div>
 </div>
-<button class="btn btn-dark w-100">Buy Now</button>
+<button class="btn btn-dark w-100" onclick="addToCart(${product.id})">Add to cart</button>
             `
                 document.querySelector("main").appendChild(div);
             })
         })
+}
+
+function addToCart(id) {
+    fetch(`https://fakestoreapi.com/products/${id}`)
+        .then(function (res) {
+            return res.json();
+        })
+        .then(function (item) {
+            cartItems.push(item);
+            alert("item added to cart");
+            document.querySelector("#itemCount").innerHTML = cartItems.length;
+        })
+    
+}
+
+function viewCart() {
+    document.querySelector("tbody").innerHTML="";
+    cartItems.map(function (item) {
+        var tr = document.createElement("tr");
+        var productName = document.createElement("td");
+        var productPrice = document.createElement("td");
+        var productImage = document.createElement("td");
+        var photo = document.createElement("img");
+        photo.src = item.image;
+        photo.height = 70;
+
+        productName.innerHTML = item.title;
+        productPrice.innerHTML = item.price;
+
+        productImage.appendChild(photo);
+        tr.appendChild(productName);
+        tr.appendChild(productPrice);
+        tr.appendChild(productImage);
+        document.querySelector("tbody").appendChild(tr);
+
+    })
 }
