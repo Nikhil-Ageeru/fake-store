@@ -47,6 +47,12 @@
         body{
             background: beige;
         }
+        @media  (width<780px) {
+            #mainNav{
+                display: none;
+            }
+           
+        }
     </style>
   
 </head>
@@ -55,7 +61,7 @@
 <body  onload="bodyLoad()">
     <header class="d-flex justify-content-around bg-dark text-light pt-3">
         <div class="brand-title h2">Fake Store</div>
-        <nav class="nav">
+        <nav class="nav" id="mainNav">
             <span class="nav-item mt-2 mx-3"><a href="javascript:loadProducts('https://fakestoreapi.com/products');">Home</a></span>
             <span class="nav-item mt-2 mx-3"><a href="javascript:loadProducts('https://fakestoreapi.com/products/category/electronics');">Electronics</a></span>
             <span class="nav-item mt-2 mx-3"><a href="javascript:loadProducts('https://fakestoreapi.com/products/category/jewelery');">Jewellery</a></span>
