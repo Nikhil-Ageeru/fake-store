@@ -71,7 +71,6 @@ function addToCart(id) {
         })
         .then(function (item) {
             cartItems.push(item);
-            alert("item added to cart");
             document.querySelector("#itemCount").innerHTML = cartItems.length;
         })
     
